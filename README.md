@@ -5,7 +5,7 @@
 ### Computing mini project completed as part of MSc 
 
 #### Description: 
-All scripts are stored in the Code directory, all results produced are stored in the Results directory and all data files used initially or created were stored in the Data directory. LaTeX document for compiling the report (pdf format) and bibtex for references are stored in the Writeup directory. To run the project, run the bash script found in the Code direcoty. This runs the entire project workflow from the intial data to the final LaTeX document, providing meaningfull output throughout. 
+All scripts are stored in the code directory, all results produced are stored in the output directory and all data files used initially or created were stored in the data directory. LaTeX document for compiling the report (pdf format) and bibtex for references are stored in the Writeup directory. To run the project, run the bash script found in the code direcoty. This runs the entire project workflow from the intial data to the final LaTeX document, providing meaningfull output throughout. 
 
 __Languages__ : Python, R, Bash, LaTeX
 
@@ -16,13 +16,13 @@ __Parameters__ :
 * Estimated starting parameters are stored in ../data/BioTraits_Params.csv
 * Optimised parameters (post minimisation) are stored in ../data/BioTraits_Params.csv
 
-__Approximate Total Run Time: __
+__Approximate Total Run Time:__
 
 #### Workflow Overview:
 The project runs in the following sequence:
 
 ##### 1. wrangle.R
-R script that imports raw data (BioTraits.csv) from the Data directoryand filters data. It then estimates starting parameters for the Briere model and all Schoolfield models. Saves data as BioTraits_Params.csv to Data directory. 
+R script that imports raw data (BioTraits.csv) from the data directory and filters data. It then estimates starting parameters for the Briere model and all Schoolfield models. Saves data as BioTraits_Params.csv to data directory. 
 
 * Packages used: dplyr
 * Imported Data: ../data/BioTraits.csv
@@ -33,17 +33,17 @@ Python script that defines functions to fit models to TPC's. Defines functions t
 
 ##### 3. NLLS_fitting.py 
 Python script, loops through each unique TPC and uses NLLS to fit each of the five models.
-Saves data as BioTraits_FinalParams.csv to Data directory. 
+Saves data as BioTraits_FinalParams.csv to data directory. 
 
 imports functions from model_functions.py
 
 * Packages used: lmfit, pandas, numpy, time
-* Scripts used: model_functions.py (also in Code Directory, see #2)
+* Scripts used: model_functions.py (also in code Directory, see #2)
 * Imported Data: ../data/BioTraits_Params.csv
 * Outputted Data: ../data/BioTraits_FinalParams.csv 
 
 ##### 4. plotting.R
-R script that imports BioTraits_FinalParams.csv from Data directory and Plots all models that converged, create tables for LaTeX (saved to Results directory) and produces some overall statistics. 
+R script that imports BioTraits_FinalParams.csv from data directory and Plots all models that converged, create tables for LaTeX (saved to output directory) and produces some overall statistics. 
 
 * Packages used: dplyr, reshape2, ggplot2, xtable
 * Imported Data: ../data/BioTraits_FinalParams.csv 
@@ -60,7 +60,7 @@ LaTeX document
 │   ├── model_functions.py :              Python        Defines models as functions to be  fitted to TPC using Python3
 │   ├── NLLS_fitting.py :                 Python        Uses NLLS method to fit models to BioTraits data in Python3
 │   ├── plotting.R :                      R             Plotting, Tables and Results Script
-│   ├── run_project.sh :              Bash          Bash to run each component of MiniProject 
+│   ├── run_project.sh :                  Bash          Bash to run each component of project 
 │   └── wrangle.R :                       R             Wrangles biotraits data and estimate starting parameter values 
 ├── data
 │   ├── BioTraits.csv                     -     Original data, used wrangle.R
