@@ -21,7 +21,7 @@ __Approximate Total Run Time: __
 #### Workflow Overview:
 The project runs in the following sequence:
 
-##### 1. Wrangle.R
+##### 1. wrangle.R
 R script that imports raw data (BioTraits.csv) from the Data directoryand filters data. It then estimates starting parameters for the Briere model and all Schoolfield models. Saves data as BioTraits_Params.csv to Data directory. 
 
 * Packages used: dplyr
@@ -42,7 +42,7 @@ imports functions from model_functions.py
 * Imported Data: ../data/BioTraits_Params.csv
 * Outputted Data: ../data/BioTraits_FinalParams.csv 
 
-##### 4. Plotting.R
+##### 4. plotting.R
 R script that imports BioTraits_FinalParams.csv from Data directory and Plots all models that converged, create tables for LaTeX (saved to Results directory) and produces some overall statistics. 
 
 * Packages used: dplyr, reshape2, ggplot2, xtable
