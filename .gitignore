@@ -78,7 +78,7 @@ README.html
 #MiniProject/Results/AIC_Plots/*
 #!MiniProject/Results/AIC_Plots/README.md
 
-/output/Model_Plots/*
+output/Model_Plots/*
 !output/Model_Plots/MD2293.pdf
 
 #MiniProject/Results/*
