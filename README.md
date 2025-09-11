@@ -14,7 +14,7 @@ __Models__ : Cubic Polynomial, Briere, Full Schoolfield, Schoolfield Low, School
 A total of five models were fitted to the data, of which two were phenomenological and three were mechanistic.  
 
 #### Phenomenological Models
-The general **Cubic Polynomial model** is phenominological and thus it's parameters $(B_{0}, B_{1}, B_{2}, B_{3})$, do not describe any underlying biological processes. Here, $B$ is the predicted trait value at a given temperature $T$ in Celsius. 
+The general **Cubic Polynomial model** is phenomenological and thus it's parameters $(B_{0}, B_{1}, B_{2}, B_{3})$, do not describe any underlying biological processes. Here, $B$ is the predicted trait value at a given temperature $T$ in Celsius. 
 
 $$
 B = B_{0} + B_{1}T + B_{2}T + B_{3}T
