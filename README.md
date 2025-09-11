@@ -11,6 +11,43 @@ __Languages__ : Python, R, Bash, LaTeX
 
 __Models__ : Cubic Polynomial, Briere, Full Schoolfield, Schoolfield Low, Schoolfield High
 
+A total of five models were fitted to the data, of which two were phenomenological and three were mechanistic.  
+
+#### Phenomenological Models
+The general **Cubic Polynomial model** is phenominological and thus it's parameters $(B_{0}, B_{1}, B_{2}, B_{3})$, do not describe any underlying biological processes. Here, $B$ is the predicted trait value at a given temperature $T$ in Celsius. 
+
+$$
+B = B_{0} + B_{1}T + B_{2}T + B_{3}T
+$$
+
+The **Briere model** is also phenominological. Temperature $T$  was taken in Celsius. $B$ is the predicted trait value. The parameter $B_{0}$ is a normalisation constant. The minimum and maximum feasible temperature beyond which the trait value goes to zero (is no longer active) are represented by parameters $T_{0}$ and $T_{m}$ respectively. 
+
+$$
+B = B_{0}T(T - T_0)\sqrt{T_{m} - T}
+$$
+
+#### Mechanistic Models
+The **Schoolfield model**, models the effect of thermodynamics and enzyme kinetics on metabolic rates as a result of temerature \cite{schoolfield1981non}. Temperature was taken in Kelvin. 
+
+$$
+B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}} {1 + e^{\frac{E_{l}}{k}(\frac{1}{T_{l}} - \frac{1}{T}} + e^{\frac{E_{h}}{k}(\frac{1}{T_{h}} - \frac{1}{T})}}
+$$
+
+
+The model returns a value of metabolism ($B$), at a given temperature $T$ based on the parameter values: Activation energy ($E$), Low temperature deactivation energy ($E_l$), Temperature for which the enzyme is half active and half low-temperature suppressed ($T_l$), High temperature deactivation energy ($E_h$), Temperature at which the enzyme is half active and half high-temperature suppressed ($T_h$). $B_0$ is the trait value at a reference temperature of 283.15 Kelvin ($10^{\circ}C$). This represents the growth rate at low temperature, controlling the offset of the curve. $K$ is the Boltzmann constant ($8.617 \times 10^{-5}$ eV $\cdot K^{-1}$).
+
+The Schoolfield high temperature inactivation energy model (**Schoolfield High**) is a simplified version of the Schoolfield model, used when low temperature deactivation energy is weak. 
+
+$$
+B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}} {1 + e^{\frac{E_{h}}{k}(\frac{1}{T_{h}} - \frac{1}{T})}}
+$$
+
+Likewise, a further simplified version of the Schoolfield model can be used in cases where high temperature inactivation of the trait is weak or not recorded. This is the Schoolfield low temperature inactivation energy model (**Schoolfield Low**). 
+
+$$
+B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}} {1 + e^{\frac{E_{l}}{k}(\frac{1}{T_{l}} - \frac{1}{T})}}
+$$
+	
 __Parameters__ : 
 
 * Estimated starting parameters are stored in ../data/BioTraits_Params.csv
