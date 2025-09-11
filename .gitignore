@@ -84,3 +84,5 @@ output/Model_Plots/*
 #MiniProject/Results/*
 #!MiniProject/Results/README.md
 
+Report/*
+data/*
