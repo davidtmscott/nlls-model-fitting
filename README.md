@@ -27,7 +27,7 @@ B = B_{0}T(T - T_0)\sqrt{T_{m} - T}
 $$
 
 #### Mechanistic Models
-The **Schoolfield model**, models the effect of thermodynamics and enzyme kinetics on metabolic rates as a result of temerature \cite{schoolfield1981non}. Temperature was taken in Kelvin. 
+The **Schoolfield model**, models the effect of thermodynamics and enzyme kinetics on metabolic rates as a result of temerature ([Schoolfield et al., 1981](https://doi.org/10.1016/0022-5193(81)90246-0)). Temperature was taken in Kelvin. 
 
 $$
 B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}} {1 + e^{\frac{E_{l}}{k}(\frac{1}{T_{l}} - \frac{1}{T}} + e^{\frac{E_{h}}{k}(\frac{1}{T_{h}} - \frac{1}{T})}}
