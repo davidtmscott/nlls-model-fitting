@@ -55,6 +55,11 @@ __Parameters__ :
 
 __Approximate Total Run Time:__
 
+#### Example Output:
+
+![Example Model Plot](output/Model_Plots/MTD2293.pdf)
+
+
 #### Workflow Overview:
 The project runs in the following sequence:
 
